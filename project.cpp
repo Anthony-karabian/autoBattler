@@ -283,7 +283,7 @@ void promptForAnotherBattle(){
 
 
 
-void main(){
+int main(){
 
     getPlayerDetails();
     assignClass();
@@ -310,4 +310,6 @@ void main(){
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); //This works because it discards everything until the newline character is reached
     cin.get();
     }
+
+    return 0;
 }
