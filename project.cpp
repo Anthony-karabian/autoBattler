@@ -16,11 +16,16 @@ int get_random(){
     return random;
 }
 
-int getPlayerDetails(){
-    char input = ' ';
+void getPlayerDetails(){
+
+    char input;
+
     bool permission = false;
+
     cout << "Hello adventurer, what is your name: ";
+
     cin >> characterName;
+
     while (permission == false){
         cout << "\nDo you wish to fight? (y/n)" << endl;
         cin >> input;
@@ -28,26 +33,13 @@ int getPlayerDetails(){
             permission = true;
         } else if (input == 'n' || input == 'N') {
             cout << "Very well..." << endl;
-            exit(0);
-        } else {
-            cout << "You did not enter a valid input, please try again.";
-            cin.clear();
-            cin.ignore(100, '\n');
-    }
-    }    
+            return;
+        } 
 
-    // permission = false;
-    // cout << "Choose a class. (1. Knight, 2. Archer, 3. Footman)";
-    // cin >> playerChoice;
-    // while(permission == false) {
-    //     if(playerChoice == 1 || playerChoice == 2 || playerChoice == 3)
-    //         permission = true;
-    // } else {
-    //     cout << "Error: Invalid input, try again.";
-    //     cin.clear();
-    //     cin.ignore(100, '\n');
-    // }
-    return 0;
+        cout << "You did not enter a valid input, please try again.";
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
 }
 
 
@@ -286,7 +278,7 @@ void promptForAnotherBattle(){
 
 
 
-int main(){
+void main(){
 
     getPlayerDetails();
     assignClass();
@@ -313,6 +305,4 @@ int main(){
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); //This works because it discards everything until the newline character is reached
     cin.get();
     }
-
-    return 0;
 }
