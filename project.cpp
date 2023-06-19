@@ -27,11 +27,16 @@ void getPlayerDetails(){
     cin >> characterName;
 
     while (permission == false){
+
         cout << "\nDo you wish to fight? (y/n)" << endl;
         cin >> input;
+
         if (input == 'y' || input == 'Y'){
+
             permission = true;
+            
         } else if (input == 'n' || input == 'N') {
+
             cout << "Very well..." << endl;
             return;
         } 
